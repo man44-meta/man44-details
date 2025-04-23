@@ -1,0 +1,738 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>About Me - man44</title>
+        <link
+            href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400&display=swap"
+            rel="stylesheet"
+        />
+        <!-- Use the Tokyo Night theme for highlight.js -->
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/tokyo-night-dark.min.css"
+        />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/highlight.min.js"></script>
+        <script>
+            hljs.highlightAll();
+        </script>
+        <style>
+            body {
+                font-family: "JetBrains Mono", monospace;
+                margin: 0;
+                padding: 0;
+                background-color: #000000;
+                color: #e0e0e0;
+                line-height: 1.6;
+                backdrop-filter: blur(5px);
+            }
+
+            .navbar {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                background-color: #1e1e1e;
+                padding: 10px 20px;
+                border-bottom: 2px solid #444;
+            }
+
+            .navbar-link {
+                color: #e0e0e0;
+                text-decoration: none;
+                margin: 0 15px;
+                font-weight: bold;
+                transition: color 0.3s;
+            }
+
+            #projects {
+                text-align: left; /* Aligns text to the left */
+            }
+
+            #projects ul {
+                margin-left: 20px; /* Optional: adds margin to the left of the list */
+                margin-bottom: 30px;
+            }
+
+            #projects h2 {
+                font-size: 2em;
+                padding-bottom: 10px;
+                margin-bottom: 20px; /* Adds some space below the heading */
+            }
+
+            #projects ul li {
+                margin-bottom: 30px; /* Adds space between each project */
+            }
+
+            #projects ul li strong {
+                font-size: 1.2em; /* Makes the project titles a bit larger */
+                color: #00ff99; /* Gives a green color to project titles */
+            }
+
+            .navbar-link:hover {
+                color: #00ff99;
+            }
+
+            .container {
+                max-width: 1000px; /* Increased width */
+                margin: 20px auto;
+                padding: 30px;
+                background-color: rgba(15, 26, 26, 0.85);
+                border: 1px solid #444;
+                text-align: center; /* Center text for the whole container */
+            }
+            h1,
+            h2,
+            h3 {
+                color: #00ff66; /* Glowing neon green for headings */
+                <!-- text-shadow: -->
+                <!--     0 0 1px #00ff66, -->
+                <!--     0 0 1px #00ff66, -->
+                <!--     0 0 1px #00ff66; /* Glowing text effect */ -->
+            }
+            .icon:hover,
+            .linkedin-logo:hover {
+                filter: brightness(0) invert(1);
+                transform: scale(1.1);
+            }
+            a {
+                color: #00ff66; /* Cyber neon green for links */
+                padding: 5px 10px; /* Adding padding for background effect */
+                text-decoration: underline;
+            }
+
+            /* Link hover effect */
+            a:hover {
+                background-color: #00ff66;
+                color: #ffffff; /* Change the text color to white on hover */
+                text-shadow:
+                    0 0 5px #00ff66,
+                    0 0 10px #00ff66,
+                    0 0 15px #00ff66; /* Retain glowing green effect */
+            }
+
+            /* Glowing link effect when hovered */
+            a:focus {
+                outline: none; /* Removes default outline when focused */
+            }
+
+            .profile {
+                margin-bottom: 20px;
+                position: relative;
+                display: inline-block;
+            }
+
+            .profile-pic {
+                width: 180px;
+                height: 180px;
+                object-fit: cover;
+                border: 4px solid #00ff99;
+            }
+
+            h1,
+            h2 {
+                color: #e0e0e0;
+                text-align: center; /* Center the headings */
+            }
+
+            p {
+                margin: 10px 0;
+                color: #b0b0b0;
+            }
+
+            .social-links {
+                display: flex;
+                justify-content: center; /* Center social links */
+                margin-top: 20px;
+            }
+
+            .social-links a {
+                margin: 0 10px;
+            }
+
+            .icon {
+                width: 35px;
+                height: 35px;
+                transition: transform 0.3s;
+            }
+
+            .cv-link {
+                display: inline-block;
+                margin-top: 20px;
+                padding: 10px 20px;
+                background-color: #00ff99;
+                color: #121212;
+                text-decoration: none;
+                border: none;
+                font-weight: bold;
+            }
+
+            .section {
+                margin-top: 30px;
+                text-align: center; /* Center the sections */
+                color: #e0e0e0;
+            }
+
+            .section h2 {
+                margin-bottom: 15px;
+            }
+
+            .section ul {
+                list-style-type: none;
+                padding: 0;
+            }
+
+            .section ul li {
+                margin: 10px 0;
+            }
+
+            .logos {
+                display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+                gap: 30px;
+                justify-items: center;
+            }
+
+            .logos .logo-card {
+                background-color: #222;
+                padding: 20px;
+                border: 1px solid #444;
+                text-align: center;
+            }
+
+            .logos img {
+                width: 60px;
+                height: 60px;
+                margin-bottom: 10px;
+            }
+
+            .logos .logo-card p {
+                color: #e0e0e0;
+                margin-top: 10px;
+            }
+
+            .certification {
+                display: flex;
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: 20px;
+                margin-top: 20px;
+            }
+            #certifications h2 {
+                font-size: 2em; /* Makes the heading larger */
+                color: #e0e0e0; /* Optional: sets the color of the heading */
+            }
+
+            .cert-card {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                object-fit: contain; /* Prevents the image from being cut off */
+                text-align: center;
+                width: 200px;
+            }
+
+            .cert-card img {
+                width: 200px;
+                height: 120px;
+                object-fit: cover;
+                object-fit: contain; /* Prevents the image from being cut off */
+                transition: transform 0.3s;
+            }
+
+            .cert-card p {
+                color: #e0e0e0;
+                margin-top: 10px;
+            }
+
+            .cert-card a {
+                margin-top: 10px;
+                color: #00ff99;
+                text-decoration: none;
+            }
+
+            .cert-card img:hover {
+                transform: scale(1.05);
+            }
+
+            a {
+                color: #00ff99;
+                text-decoration: none;
+            }
+
+            a:focus {
+                outline: none;
+            }
+
+            pre {
+                position: relative;
+                overflow: auto;
+                padding: 20px;
+                font-size: 18px;
+                font-family: "JetBrains Mono", monospace;
+                white-space: pre-wrap;
+                word-wrap: break-word;
+                background-color: #181818;
+                text-align: left; /* Align code to the left */
+            }
+
+            pre code {
+                display: block;
+                padding: 10px;
+                background: none;
+                color: inherit;
+            }
+
+            /* LinkedIn logo fix */
+            .linkedin-logo {
+                width: 35px;
+                height: 35px;
+                filter: brightness(0) invert(1);
+            }
+
+            /* Styles for the Skills section */
+            #skills {
+                text-align: center;
+                margin-top: 30px;
+            }
+            #skills h2 {
+                font-size: 2em; /* Makes the heading larger */
+                color: #e0e0e0; /* Optional: sets the color of the heading */
+            }
+
+            .logos {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 20px;
+                margin-top: 20px;
+            }
+
+            .logo-card {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                width: 100px;
+                text-align: center;
+            }
+
+            .logo-img {
+                width: 60px;
+                height: 60px;
+                object-fit: contain;
+                margin-bottom: 10px;
+            }
+
+            /* Get in Touch Section */
+            #get-in-touch {
+                text-align: center;
+                margin-top: 50px;
+                color: #e0e0e0;
+            }
+
+            #get-in-touch h2 {
+                font-size: 2em;
+                margin-bottom: 15px;
+                color: #00ff66; /* Matching the glowing green color for consistency */
+            }
+
+            #get-in-touch p {
+                font-size: 1.1em;
+                margin-bottom: 30px;
+                color: #b0b0b0;
+            }
+
+            .social-links a {
+                margin: 0 15px;
+            }
+
+            .icon {
+                width: 40px;
+                height: 40px;
+                transition:
+                    transform 0.3s ease,
+                    filter 0.3s ease;
+            }
+
+            .icon:hover {
+                transform: scale(1.1);
+                filter: brightness(0) invert(1); /* Invert colors for hover effect */
+            }
+
+            .linkedin-logo {
+                width: 40px;
+                height: 40px;
+                filter: brightness(0) invert(1); /* Make LinkedIn icon invert on hover */
+            }
+
+            p {
+                font-size: 0.9em;
+                color: #b0b0b0;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- <nav class="navbar"> -->
+        <!--     <div class="navbar-left"> -->
+        <!--         <a href="/blogs" class="navbar-link">man44-unplugged</a> -->
+        <!--     </div> -->
+        <!--     <div class="navbar-right"> -->
+        <!--         <a href="#about" class="navbar-link">About Me</a> -->
+        <!--         <a href="#skills" class="navbar-link">Skills</a> -->
+        <!--         <a href="#certifications" class="navbar-link">Certifications</a> -->
+        <!--         <a href="#projects" class="navbar-link">Projects</a> -->
+        <!--         <!-1- Added Projects Link -1-> -->
+        <!--     </div> -->
+        <!-- </nav> -->
+
+        <div class="container" id="about">
+            <h1>I'm Hardik</h1>
+
+            <!-- Go code block at the start -->
+            <pre><code>
+func NewPerson() *Person {
+    return &Person{
+        Name: "Hardik Y Kumawat",
+        WhoAmI : "Backend and DevOps engineer",
+        Organisation: "Actively Hunting For One",
+        Languages:  [Jstring{"go", "python", "c++"}],
+    }
+}
+            </code></pre>
+
+            <div class="profile">
+                <img
+                    src="http://localhost:8001/temp/pic.jpg"
+                    alt="Profile Picture"
+                    class="profile-pic"
+                />
+            </div>
+
+            <p>
+                I'm Hardik Kumawat (man44), a software engineer focused on
+                efficiency and optimization. I specialize in building scalable
+                solutions using
+                <strong>Go</strong> and <strong>Python</strong>.
+            </p>
+            <p>I write clean simple and efficient code.</p>
+            <p>I drink a lot of coffee.</p>
+
+            <a
+                href="http://localhost:8001/temp/resume.pdf"
+                class="cv-link"
+                download
+                >Download CV</a
+            >
+        </div>
+
+        <div class="container" id="skills">
+            <h2>Skills</h2>
+
+            <!-- Programming Languages Section -->
+            <div class="category-section">
+                <h3>Programming Languages</h3>
+                <div class="logos">
+                    <div class="logo-card">
+                        <img
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/go/go-original.svg"
+                            alt="Go Logo"
+                            class="logo-img"
+                        />
+                        <p>Go</p>
+                    </div>
+                    <div class="logo-card">
+                        <img
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg"
+                            alt="Python Logo"
+                            class="logo-img"
+                        />
+                        <p>Python</p>
+                    </div>
+                    <div class="logo-card">
+                        <img
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-original.svg"
+                            alt="C++ Logo"
+                            class="logo-img"
+                        />
+                        <p>C++</p>
+                    </div>
+                    <div class="logo-card">
+                        <img
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-plain.svg"
+                            alt="JavaScript Logo"
+                            class="logo-img"
+                        />
+                        <p>JavaScript</p>
+                    </div>
+                    <div class="logo-card">
+                        <img
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg"
+                            alt="TypeScript Logo"
+                            class="logo-img"
+                        />
+                        <p>TypeScript</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tools and Frameworks Section -->
+            <div class="category-section">
+                <h3>Tools and Frameworks</h3>
+                <div class="logos">
+                    <div class="logo-card">
+                        <img
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg"
+                            alt="Docker Logo"
+                            class="logo-img"
+                        />
+                        <p>Docker</p>
+                    </div>
+                    <div class="logo-card">
+                        <img
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original-wordmark.svg"
+                            alt="MySQL Logo"
+                            class="logo-img"
+                        />
+                        <p>MySQL</p>
+                    </div>
+                    <div class="logo-card">
+                        <img
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg"
+                            alt="Node.js Logo"
+                            class="logo-img"
+                        />
+                        <p>Node.js</p>
+                    </div>
+                    <div class="logo-card">
+                        <img
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/express/express-original.svg"
+                            alt="Express.js Logo"
+                            class="logo-img"
+                        />
+                        <p>Express.js</p>
+                    </div>
+                    <div class="logo-card">
+                        <img
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/go/go-original-wordmark.svg"
+                            alt="Gin Logo"
+                            class="logo-img"
+                        />
+                        <p>Gin</p>
+                    </div>
+                    <div class="logo-card">
+                        <img
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/go/go-original-wordmark.svg"
+                            alt="Chi Logo"
+                            class="logo-img"
+                        />
+                        <p>Chi</p>
+                    </div>
+                    <div class="logo-card">
+                        <img
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/flask/flask-original-wordmark.svg"
+                            alt="Flask Logo"
+                            class="logo-img"
+                        />
+                        <p>Flask</p>
+                    </div>
+                    <div class="logo-card">
+                        <img
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nginx/nginx-original.svg"
+                            alt="Nginx Logo"
+                            class="logo-img"
+                        />
+                        <p>Nginx</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container" id="certifications">
+            <h2>Certifications</h2>
+            <div class="certification">
+                <div class="cert-card">
+                    <img
+                        src="http://localhost:8001/temp/go.png"
+                        alt="Golang certification"
+                    />
+                    <p>
+                        Golang Intermediate Certification [Hackerrank] December
+                        2024
+                    </p>
+                    <a
+                        href="https://www.hackerrank.com/certificates/xxxxxxxxxx"
+                        target="_blank"
+                        >View Certificate</a
+                    >
+                </div>
+                <div class="cert-card">
+                    <img
+                        src="http://localhost:8001/temp/hacker.png"
+                        alt="Mastering DSA certification"
+                    />
+                    <p>
+                        Mastering Data Structures & Algorithm using C and C++
+                        [Udemy] November 2023
+                    </p>
+                    <a
+                        href="https://www.udemy.com/certificate/xxxxxxxxxx"
+                        target="_blank"
+                        >View Certificate</a
+                    >
+                </div>
+                <div class="cert-card">
+                    <img
+                        src="http://localhost:8001/temp/ehe.png"
+                        alt="Ethical Hacking certification"
+                    />
+                    <p>
+                        Ethical Hacking Essentials (EHE) [Coursera] December
+                        2024
+                    </p>
+                    <a
+                        href="https://www.coursera.org/certificate/xxxxxxxxxx"
+                        target="_blank"
+                        >View Certificate</a
+                    >
+                </div>
+                <div class="cert-card">
+                    <img
+                        src="http://localhost:8001/temp/dfe.png"
+                        alt="Digital Forensics Essentials certification"
+                    />
+                    <p>
+                        Digital Forensics Essentials (DFE) [Coursera] November
+                        2024
+                    </p>
+                    <a
+                        href="https://www.coursera.org/certificate/xxxxxxxxxx"
+                        target="_blank"
+                        >View Certificate</a
+                    >
+                </div>
+            </div>
+        </div>
+
+        <div class="container" id="projects" style="text-align: left">
+            <h2>Projects</h2>
+            <ul>
+                <li>
+                    <div class="project-text">
+                        <strong>Go-serverless:</strong> Serverless Platform (Feb
+                        2025 – Mar 2025)
+                        <br />
+                        Designed a serverless platform using Go and Docker to
+                        enable users to upload and execute code in a secure
+                        environment. Developed RESTful API for submitting and
+                        executing code, allowing seamless interaction with the
+                        platform. Integrated Prometheus and Grafana for system
+                        monitoring.
+                        <br />
+                        <strong>Tech:</strong> Golang, Docker, Grafana,
+                        Prometheus
+                        <br />
+                        <a
+                            class="project-link"
+                            href="https://github.com/hardikkum444/go-serverless"
+                            target="_blank"
+                            >GitHub</a
+                        >
+                    </div>
+                    <img
+                        src="http://localhost:8001/temp/go-serverless-image.jpg"
+                        alt="Go Serverless"
+                    />
+                </li>
+                <li>
+                    <div class="project-text">
+                        <strong>Unplugged:</strong> Self Hostable Blazingly Fast
+                        Robust Blogging Service (Jan 2025 – Feb 2025)
+                        <br />
+                        Created a robust and blazingly fast self-hostable
+                        blogging service with Docker, Nginx, and MySQL.
+                        <br />
+                        <strong>Tech:</strong> Golang, Docker, Nginx, HTML
+                        templates
+                        <br />
+                        <a
+                            class="project-link"
+                            href="https://github.com/hardikkum444/man44-unplugged"
+                            target="_blank"
+                            >GitHub</a
+                        >
+                    </div>
+                    <img
+                        src="http://localhost:8001/temp/unplugged-image.jpg"
+                        alt="Unplugged Project"
+                    />
+                </li>
+                <li>
+                    <div class="project-text">
+                        <strong>IYD–Image Your Disk:</strong> Disk Imaging
+                        Application (Jul 2024 – Aug 2024)
+                        <br />
+                        Built a disk imaging application using Python with
+                        native support for Linux. Integrated PGP for secure
+                        mounting and encryption of disk images.
+                        <br />
+                        <strong>Tech:</strong> Python (Python-tkinter), Figma
+                        <br />
+                        <a
+                            class="project-link"
+                            href="https://github.com/hardikkum444/IYD-Image-Your-Disk"
+                            target="_blank"
+                            >GitHub</a
+                        >
+                    </div>
+                    <img
+                        src="http://localhost:8001/temp/iyd-image.jpg"
+                        alt="IYD Disk Imaging"
+                    />
+                </li>
+            </ul>
+        </div>
+
+        <div class="container" id="get-in-touch">
+            <h2>Get in Touch</h2>
+            <p>
+                If you'd like to connect, feel free to reach out via the links
+                below:
+            </p>
+            <div class="social-links">
+                <a
+                    href="https://github.com/hardikkum444"
+                    target="_blank"
+                    title="GitHub"
+                >
+                    <img
+                        src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg"
+                        alt="GitHub"
+                        class="icon"
+                    />
+                </a>
+                <a
+                    href="https://x.com/JohnWhitman444"
+                    target="_blank"
+                    title="Twitter (X)"
+                >
+                    <img
+                        src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/twitter/twitter-original.svg"
+                        alt="Twitter"
+                        class="icon"
+                    />
+                </a>
+                <a
+                    href="https://www.linkedin.com/in/hardik-y-kumawat/"
+                    target="_blank"
+                    title="LinkedIn"
+                >
+                    <img
+                        src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linkedin/linkedin-original.svg"
+                        alt="LinkedIn"
+                        class="linkedin-logo"
+                    />
+                </a>
+            </div>
+        </div>
+    </body>
+</html>
