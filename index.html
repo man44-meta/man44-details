@@ -51,6 +51,22 @@
                 transition: color 0.3s;
             }
 
+            .project-image {
+                display: block;
+                max-width: 100%;
+                margin-top: 10px; /* Adds space above the image */
+            }
+
+            .project-link {
+                color: #00ff66;
+                text-decoration: none;
+                transition: color 0.3s;
+            }
+
+            .project-link:hover {
+                color: #ff9900;
+            }
+
             #projects {
                 text-align: left; /* Aligns text to the left */
             }
@@ -91,10 +107,6 @@
             h2,
             h3 {
                 color: #00ff66; /* Glowing neon green for headings */
-                <!-- text-shadow: -->
-                <!--     0 0 1px #00ff66, -->
-                <!--     0 0 1px #00ff66, -->
-                <!--     0 0 1px #00ff66; /* Glowing text effect */ -->
             }
             .icon:hover,
             .linkedin-logo:hover {
@@ -120,6 +132,30 @@
             /* Glowing link effect when hovered */
             a:focus {
                 outline: none; /* Removes default outline when focused */
+            }
+
+            .project-text {
+                margin-bottom: 20px; /* Adds space below the project text */
+            }
+
+            .project-image {
+                display: block;
+                max-width: 70%;
+                height: auto;
+                margin-top: 10px;
+                border: 1px solid #00ff99;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .project-link {
+                color: #00ff66;
+                text-decoration: none;
+                transition: color 0.3s;
+            }
+
+            .project-link:hover {
+                color: #ff9900;
             }
 
             .profile {
@@ -378,19 +414,6 @@
         </style>
     </head>
     <body>
-        <!-- <nav class="navbar"> -->
-        <!--     <div class="navbar-left"> -->
-        <!--         <a href="/blogs" class="navbar-link">man44-unplugged</a> -->
-        <!--     </div> -->
-        <!--     <div class="navbar-right"> -->
-        <!--         <a href="#about" class="navbar-link">About Me</a> -->
-        <!--         <a href="#skills" class="navbar-link">Skills</a> -->
-        <!--         <a href="#certifications" class="navbar-link">Certifications</a> -->
-        <!--         <a href="#projects" class="navbar-link">Projects</a> -->
-        <!--         <!-1- Added Projects Link -1-> -->
-        <!--     </div> -->
-        <!-- </nav> -->
-
         <div class="container" id="about">
             <h1>I'm Hardik</h1>
 
@@ -407,7 +430,11 @@ func NewPerson() *Person {
             </code></pre>
 
             <div class="profile">
-                <img src="pic.jpg" alt="Profile Picture" class="profile-pic" />
+                <img
+                    src="http://localhost:8001/temp/pic.jpg"
+                    alt="Profile Picture"
+                    class="profile-pic"
+                />
             </div>
 
             <p>
@@ -419,7 +446,12 @@ func NewPerson() *Person {
             <p>I write clean simple and efficient code.</p>
             <p>I drink a lot of coffee.</p>
 
-            <a href="resume.pdf" class="cv-link" download>Download CV</a>
+            <a
+                href="http://localhost:8001/temp/resume.pdf"
+                class="cv-link"
+                download
+                >Download CV</a
+            >
         </div>
 
         <div class="container" id="skills">
@@ -548,7 +580,10 @@ func NewPerson() *Person {
             <h2>Certifications</h2>
             <div class="certification">
                 <div class="cert-card">
-                    <img src="go.png" alt="Golang certification" />
+                    <img
+                        src="http://localhost:8001/temp/go.png"
+                        alt="Golang certification"
+                    />
                     <p>
                         Golang Intermediate Certification [Hackerrank] December
                         2024
@@ -560,7 +595,10 @@ func NewPerson() *Person {
                     >
                 </div>
                 <div class="cert-card">
-                    <img src="hacker.png" alt="Mastering DSA certification" />
+                    <img
+                        src="http://localhost:8001/temp/hacker.png"
+                        alt="Mastering DSA certification"
+                    />
                     <p>
                         Mastering Data Structures & Algorithm using C and C++
                         [Udemy] November 2023
@@ -572,7 +610,10 @@ func NewPerson() *Person {
                     >
                 </div>
                 <div class="cert-card">
-                    <img src="ehe.png" alt="Ethical Hacking certification" />
+                    <img
+                        src="http://localhost:8001/temp/ehe.png"
+                        alt="Ethical Hacking certification"
+                    />
                     <p>
                         Ethical Hacking Essentials (EHE) [Coursera] December
                         2024
@@ -585,7 +626,7 @@ func NewPerson() *Person {
                 </div>
                 <div class="cert-card">
                     <img
-                        src="dfe.png"
+                        src="http://localhost:8001/temp/dfe.png"
                         alt="Digital Forensics Essentials certification"
                     />
                     <p>
@@ -626,7 +667,11 @@ func NewPerson() *Person {
                             >GitHub</a
                         >
                     </div>
-                    <img src="go-serverless-image.jpg" alt="Go Serverless" />
+                    <img
+                        src="serverless.png"
+                        alt="Go Serverless"
+                        class="project-image"
+                    />
                 </li>
                 <li>
                     <div class="project-text">
@@ -646,7 +691,11 @@ func NewPerson() *Person {
                             >GitHub</a
                         >
                     </div>
-                    <img src="unplugged-image.jpg" alt="Unplugged Project" />
+                    <img
+                        src="unplugged.png"
+                        alt="Unplugged Project"
+                        class="project-image"
+                    />
                 </li>
                 <li>
                     <div class="project-text">
@@ -666,11 +715,14 @@ func NewPerson() *Person {
                             >GitHub</a
                         >
                     </div>
-                    <img src="iyd-image.jpg" alt="IYD Disk Imaging" />
+                    <img
+                        src="iyd.png "
+                        alt="IYD Disk Imaging"
+                        class="project-image"
+                    />
                 </li>
             </ul>
         </div>
-
         <div class="container" id="get-in-touch">
             <h2>Get in Touch</h2>
             <p>
